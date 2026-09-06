@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "user": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "等级": {
+          "default": "无",
+          "type": "string"
+        },
+        "DP": {
+          "default": 0,
+          "type": "number"
+        },
+        "龙币": {
+          "default": 0,
+          "type": "number"
+        },
+        "收藏": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "出战卡组": {
+          "$ref": "#/$defs/__schema1"
+        },
+        "卡组库": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/__schema1"
+          }
+        },
+        "素材": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "白材": {
+                "default": 0,
+                "type": "number"
+              },
+              "青材": {
+                "default": 0,
+                "type": "number"
+              },
+              "红材": {
+                "default": 0,
+                "type": "number"
+              },
+              "金材": {
+                "default": 0,
+                "type": "number"
+              },
+              "彩材": {
+                "default": 0,
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "决斗": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "进行中": {
+          "default": false,
+          "type": "boolean"
+        },
+        "回合": {
+          "default": 1,
+          "type": "number"
+        },
+        "阶段": {
+          "default": "",
+          "type": "string"
+        },
+        "己方LP": {
+          "default": 8000,
+          "type": "number"
+        },
+        "己方手牌": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "己方前场": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "己方后场": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "己方场地魔法": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "己方卡组数": {
+          "default": 0,
+          "type": "number"
+        },
+        "己方额外数": {
+          "default": 0,
+          "type": "number"
+        },
+        "己方墓地": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "己方除外": {
+          "$ref": "#/$defs/__schema5"
+        },
+        "对手": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "名字": {
+              "default": "",
+              "type": "string"
+            },
+            "LP": {
+              "default": 8000,
+              "type": "number"
+            },
+            "手牌数": {
+              "default": 0,
+              "type": "number"
+            },
+            "卡组数": {
+              "default": 0,
+              "type": "number"
+            },
+            "额外数": {
+              "default": 0,
+              "type": "number"
+            },
+            "前场": {
+              "$ref": "#/$defs/__schema2"
+            },
+            "后场": {
+              "$ref": "#/$defs/__schema4"
+            },
+            "场地魔法": {
+              "$ref": "#/$defs/__schema3"
+            },
+            "墓地": {
+              "$ref": "#/$defs/__schema5"
+            },
+            "除外": {
+              "$ref": "#/$defs/__schema5"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "__schema0": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "卡名": {
+          "default": "",
+          "type": "string"
+        },
+        "稀有度": {
+          "default": "N",
+          "type": "string"
+        },
+        "属性": {
+          "default": "",
+          "type": "string"
+        },
+        "种族": {
+          "default": "",
+          "type": "string"
+        },
+        "Lv": {
+          "default": 1,
+          "type": "number"
+        },
+        "阶级": {
+          "default": 0,
+          "type": "number"
+        },
+        "调整": {
+          "default": false,
+          "type": "boolean"
+        },
+        "ATK": {
+          "default": 0,
+          "type": "number"
+        },
+        "DEF": {
+          "default": 0,
+          "type": "number"
+        },
+        "类型": {
+          "default": "",
+          "type": "string"
+        },
+        "效果": {
+          "default": "",
+          "type": "string"
+        },
+        "素材": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": {}
+    },
+    "__schema1": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "主卡组": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "额外卡组": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        }
+      }
+    },
+    "__schema2": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "怪兽区1": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "怪兽区2": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "怪兽区3": {
+          "$ref": "#/$defs/__schema3"
+        }
+      }
+    },
+    "__schema3": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/__schema0"
+        }
+      ]
+    },
+    "__schema4": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "魔陷区1": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "魔陷区2": {
+          "$ref": "#/$defs/__schema3"
+        },
+        "魔陷区3": {
+          "$ref": "#/$defs/__schema3"
+        }
+      }
+    },
+    "__schema5": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/$defs/__schema0"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,233 @@
+/* 卡德莫尼亚 · 战场面板全局样式（消息楼层内渲染） */
+#app {
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+.kdm-field {
+  background: linear-gradient(180deg, #171a24 0%, #1b1f2a 100%);
+  border: 1px solid #39405a;
+  border-radius: 10px;
+  padding: 10px;
+  color: #e8eaf2;
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: 560px;
+  margin: 4px 0;
+}
+.kdm-field--idle .kdm-status-txt {
+  color: #8b93ab;
+}
+
+/* ---- 状态条 ---- */
+.kdm-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: #232838;
+  border: 1px solid #39405a;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.kdm-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4a4f62;
+}
+.kdm-status-dot.on {
+  background: #4ade80;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+/* ---- 单侧面板 ---- */
+.kdm-side {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.kdm-side-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 6px 10px;
+  background: #232838;
+  border: 1px solid #39405a;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.kdm-side-name {
+  color: #c9a227;
+}
+.kdm-side-lp {
+  color: #f87171;
+  font-weight: 700;
+}
+.kdm-side-lp.low {
+  animation: kdm-blink 1.2s infinite;
+}
+.kdm-side-count {
+  color: #8b93ab;
+  font-weight: 400;
+  font-size: 12px;
+}
+.kdm-row-label {
+  color: #8b93ab;
+  font-size: 11px;
+  padding-left: 2px;
+  margin-top: 2px;
+}
+.kdm-slot-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+/* ---- 槽位格 ---- */
+.kdm-slot {
+  background: #1d2230;
+  border: 1px solid #39405a;
+  border-radius: 6px;
+  padding: 5px 6px;
+  min-height: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  overflow: hidden;
+}
+.kdm-slot--monster {
+  border-color: #7c3aed;
+  background: linear-gradient(180deg, #241b38 0%, #1d2230 100%);
+}
+.kdm-slot--spell {
+  border-color: #0ea5e9;
+  background: linear-gradient(180deg, #152e3a 0%, #1d2230 100%);
+}
+.kdm-slot--facedown {
+  border-color: #64748b;
+  background: repeating-linear-gradient(45deg, #1a1e2a 0 6px, #202636 6px 12px);
+}
+.kdm-slot-empty {
+  color: #3f4457;
+  text-align: center;
+  font-size: 12px;
+}
+.kdm-slot-name {
+  font-weight: 600;
+  font-size: 12px;
+  color: #e8eaf2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kdm-slot-name.kdm-facedown {
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+.kdm-slot-meta {
+  color: #8b93ab;
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kdm-slot-atk {
+  color: #fbbf24;
+  font-size: 11px;
+  font-weight: 600;
+}
+.kdm-slot-sub {
+  color: #64748b;
+  font-size: 10px;
+}
+
+/* ---- 手牌 ---- */
+.kdm-hand {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.kdm-hand-card {
+  background: #232838;
+  border: 1px solid #39405a;
+  border-radius: 6px;
+  padding: 4px 7px;
+  max-width: 150px;
+  cursor: help;
+}
+.kdm-hand-name {
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kdm-hand-meta {
+  color: #8b93ab;
+  font-size: 10px;
+}
+.kdm-hand-atk {
+  color: #fbbf24;
+  font-size: 11px;
+}
+.kdm-side-empty {
+  color: #3f4457;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+/* ---- 墓地 / 除外 ---- */
+.kdm-grave-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 2px;
+}
+.kdm-grave {
+  background: #1d2230;
+  border: 1px solid #39405a;
+  border-radius: 6px;
+  padding: 4px 7px;
+}
+.kdm-grave-label {
+  color: #64748b;
+  font-size: 10px;
+  margin-right: 6px;
+  font-weight: 600;
+}
+.kdm-grave-list {
+  color: #cbd5e1;
+  font-size: 11px;
+  word-break: break-all;
+}
+
+/* ---- 分隔 ---- */
+.kdm-divider {
+  text-align: center;
+  color: #39405a;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+@keyframes kdm-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@media (max-width: 560px) {
+  .kdm-field {
+    font-size: 12px;
+    padding: 8px;
+    max-width: 100%;
+  }
+  .kdm-slot {
+    padding: 4px 5px;
+    min-height: 40px;
+  }
+  .kdm-hand-card {
+    max-width: 120px;
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {},
+  "type": "object",
+  "properties": {
+    "主角": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "",
+          "type": "string"
+        },
+        "性别": {
+          "default": "",
+          "type": "string"
+        },
+        "等级": {
+          "default": 1,
+          "type": "number"
+        },
+        "经验值": {
+          "default": 0,
+          "type": "number"
+        },
+        "金钱": {
+          "default": 0,
+          "type": "number"
+        },
+        "HP": {
+          "default": 0,
+          "type": "number"
+        },
+        "最大HP": {
+          "default": 1,
+          "type": "number"
+        },
+        "MP": {
+          "default": 0,
+          "type": "number"
+        },
+        "最大MP": {
+          "default": 1,
+          "type": "number"
+        },
+        "快感度": {
+          "default": 0,
+          "type": "number"
+        },
+        "状态": {
+          "default": "正常",
+          "type": "string"
+        }
+      }
+    },
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前地区": {
+          "default": "",
+          "type": "string"
+        },
+        "当前场景": {
+          "default": "",
+          "type": "string"
+        },
+        "日期": {
+          "default": "",
+          "type": "string"
+        }
+      }
+    },
+    "队伍": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前同行女孩": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "姓名": {
+              "default": "",
+              "type": "string"
+            },
+            "好感度": {
+              "default": 0,
+              "type": "number"
+            },
+            "等级": {
+              "default": 1,
+              "type": "number"
+            },
+            "HP": {
+              "default": 0,
+              "type": "number"
+            },
+            "快感度": {
+              "default": 0,
+              "type": "number"
+            },
+            "状态": {
+              "default": "正常",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "战斗": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "进行中": {
+          "default": false,
+          "type": "boolean"
+        },
+        "回合数": {
+          "default": 0,
+          "type": "number"
+        },
+        "战斗结果": {
+          "default": "无",
+          "type": "string"
+        },
+        "主角拘束": {
+          "default": "无",
+          "type": "string"
+        },
+        "女孩拘束": {
+          "default": "无",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
