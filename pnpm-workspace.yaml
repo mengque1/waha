@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 packages:
   - .
+=======
+>>>>>>> ef49cc74019348a1696eda4d988d4f4ddc0d1b9b
 allowBuilds:
   '@parcel/watcher': true
   unrs-resolver: true
   vue-demi: true
+<<<<<<< HEAD
 minimumReleaseAge: 0
+=======
+>>>>>>> ef49cc74019348a1696eda4d988d4f4ddc0d1b9b
